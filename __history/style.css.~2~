@@ -1,0 +1,13 @@
+/*
+Theme Name: Software
+Theme URI: 
+Author: Funky Line
+Author URI: 
+Description: Software is a multipurpose Free WordPress Theme. 
+License: 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 
+Tags: 
+
+*/
+.s-blog-item {height: auto!important;}
