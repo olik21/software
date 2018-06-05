@@ -18,8 +18,10 @@ Template Name: Blog template
 <?                
             
 $args = array(
-    'posts_per_page' => 3,
-    'orderby' => 'comment_count'
+    'posts_per_page' => 6,
+    'orderby' => 'comment_count',
+    'paged' => $paged,
+    'cat' => -4,
 );
 
 $q = new WP_Query($args);
@@ -30,7 +32,7 @@ if($q->have_posts()) {
     
     <section class="m-blog">
         <div class="container">
-            <div class="row justify-content-center"><div class="pp"></div>
+            <div class="row justify-content-center">
 
  <?      
 
@@ -59,17 +61,14 @@ if($q->have_posts()) {
     <?php 
             $pagination_args = array(
              'show_all' => true,
-             'screen_reader_text' => ' ',
              'prev_next'    => false,
-          /*   'before'           => '<ul ><li>',
-             'after'            => '</li></ul>',
-             'before_page_number' => '<li>',
-             'after_page_number' => '</li>',*/
+         
         );
 
         $GLOBALS['wp_query'] = $q;
         
-        the_posts_pagination( $pagination_args );
+     the_posts_pagination( $pagination_args );
+    
     ?>
            
    
@@ -79,34 +78,9 @@ if($q->have_posts()) {
 
      <? }  // end if ?> 
 
-    <section class="s-contact s-contact--bg">
-        <div class="container">
-            <h2 class="h2">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-6 no-pad">
-                    <div class="s-contact-black s-contact-item s-contact-item--company">
-                        <img src="<? bloginfo('template_url' ); ?>/img/envelope.svg" alt="alt" class="envelope">
-                        <form class="form-c">
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Name*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Email*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Phone*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Message*">
-                            </div>
-                            <div class="centered">
-                                <a href="#" class="btn btn--blue btn--company">Submit</a>
-                            </div>
-                        </form>
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+
+<? get_template_part( 'contact-form', 'index' ); ?>
 
     <?php get_footer(); ?>

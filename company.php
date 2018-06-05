@@ -185,34 +185,6 @@ Template Name: Company Page
             </div>
         </div>
     </section>
-    <section class="s-contact s-contact--bg">
-        <div class="container">
-            <h2 class="h2">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-6 no-pad">
-                    <div class="s-contact-black s-contact-item s-contact-item--company">
-                        <img src="<? bloginfo('template_url' ); ?>/img/envelope.svg" alt="alt" class="envelope">
-                        <form class="form-c">
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Name*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Email*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Phone*">
-                            </div>
-                            <div class="form-c__row">
-                                <input type="text" placeholder="Message*">
-                            </div>
-                            <div class="centered">
-                                <a href="#" class="btn btn--blue btn--company">Submit</a>
-                            </div>
-                        </form>
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </section>
+    <? get_template_part( 'contact-form', 'index' ); ?>
 
 <?php get_footer(); ?>

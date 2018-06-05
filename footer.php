@@ -74,12 +74,10 @@
 
     <!-- MODAL FORM END -->
     <script async src="<? bloginfo('template_url' ); ?>/js/scripts.min.js"></script>
-    <link rel="stylesheet" href="<? bloginfo('template_url' ); ?>/css/main.min.css">
+    <link rel="stylesheet" href="<? bloginfo('template_url' ); ?>/css/main.min.css" >
+    <link rel="stylesheet" href="<? bloginfo('template_url' ); ?>/css/style-pagin.css" >
 
-    <?php // bloginfo('stylesheet_url'); ?>
-
-
-
+    <?php wp_footer(); ?>
 		
 	</body>
 </html>
